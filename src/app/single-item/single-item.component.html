@@ -1,0 +1,16 @@
+<app-header [active]=0></app-header>
+<!-- <li >
+                        <img class="etalage_thumb_image img-responsive" [src]="image.thumbImage" alt="">
+                        <img class="etalage_source_image img-responsive" [src]="image.sourceImage" alt="">
+                    </li> -->
+<mdb-carousel [animation]="'slide'">
+    <mdb-carousel-item *ngFor="let image of this.images">
+        <img class="d-block w-100" [src]="image.thumbImage" alt="First slide">
+    </mdb-carousel-item>
+</mdb-carousel>
+
+<fa-icon [icon]="faChevronRight"></fa-icon>
+
+<div class="row">
+    <mdb-image-modal [modalImages]="imagesBasic" type="no-margin"></mdb-image-modal>
+</div>

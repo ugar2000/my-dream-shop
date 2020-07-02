@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 
+
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-dream-shop';
+
+
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'ru']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('ru');
+  }
+
 }

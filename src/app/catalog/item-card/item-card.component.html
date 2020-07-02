@@ -1,0 +1,28 @@
+<div class="product-grid">
+    <a class='thumb-image'>
+        <img class="img-responsive" [src]='this.genImage'>
+    </a>
+    <div class='special-tag' *ngIf="this.availability; else inStock">
+        <div class="not-available">
+            {{ 'NOT_AVAILABLE' | translate }}
+        </div>
+    </div>
+    <ng-template #inStock>
+        <div class='special-tag'>
+            <div class="available">
+                {{ 'IN_STOCK' | translate }}
+            </div>
+        </div>
+    </ng-template>
+    <div class='thumb-content'>
+        <h6>
+            <a class="product-title">{{this.productName}}</a>
+        </h6>
+        <hr>
+        <div class="prices-container">
+            <label class="crossprice">{{ this.productPrice }}</label>
+            <label class="price">{{ this.productPrice }}</label>
+        </div>
+        <a class="store">FIND A STORE</a>
+    </div>
+</div>
